@@ -1,44 +1,81 @@
-@prefix : <https://w3id.org/battery-data-alliance/ontology/battery-data-format#> .
+@prefix bda: <https://w3id.org/battery-data-alliance/ontology/battery-data-format#> .
+@prefix cdf: <https://w3id.org/catalysis-data-format/ontology/catalysis-data-format#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-:test_time_millisecond rdf:type owl:Class ;
-    owl:deprecated "true"^^xsd:boolean ;
-    skos:prefLabel "Test Time / ms"@en ;
-    skos:altLabel "test_time_millisecond"@en ;
-    skos:notation "test_time_millisecond" .
-
-:test_time_second rdf:type owl:Class ;
+bda:test_time_second rdf:type owl:Class ;
     skos:prefLabel "Test Time / s"@en ;
     skos:altLabel "test_time_second"@en ;
     skos:notation "test_time_second" .
 
-:voltage_volt rdf:type owl:Class ;
+bda:voltage_volt rdf:type owl:Class ;
     skos:prefLabel "Voltage / V"@en ;
     skos:altLabel "voltage_volt"@en ;
     skos:notation "voltage_volt" .
 
-:current_ampere rdf:type owl:Class ;
+bda:current_ampere rdf:type owl:Class ;
     skos:prefLabel "Current / A"@en ;
     skos:altLabel "current_ampere"@en ;
-    skos:altLabel "current_a"@en ;
     skos:notation "current_ampere" .
 
-:cycle_count rdf:type owl:Class ;
-    skos:prefLabel "Cycle Count / 1"@en ;
-    skos:altLabel "cycle_count"@en ;
-    skos:altLabel "cycle_dimensionless"@en ;
-    skos:notation "cycle_count" .
+bda:unix_time_second rdf:type owl:Class ;
+    skos:prefLabel "Unix Time / s"@en ;
+    skos:altLabel "unix_time_second"@en ;
+    skos:notation "unix_time_second" .
 
-:ambient_temperature_celsius rdf:type owl:Class ;
-    skos:prefLabel "Ambient Temperature / degC"@en ;
-    skos:altLabel "ambient_temperature_celsius"@en ;
-    skos:notation "ambient_temperature_celsius" .
+cdf:charge_coulomb rdf:type owl:Class ;
+    skos:prefLabel "Charge / As"@en ;
+    skos:altLabel "charge_coulomb"@en ;
+    skos:notation "charge_coulomb" .
 
-:internal_resistance_ohm rdf:type owl:Class ;
-    skos:prefLabel "Internal Resistance / ohm"@en ;
-    skos:altLabel "internal_resistance_ohm"@en ;
-    skos:hiddenLabel "Internal Resistance / Ohm"@en ;
-    skos:notation "internal_resistance_ohm" .
+cdf:temperature_celsius rdf:type owl:Class ;
+    skos:prefLabel "Temperature / °C"@en ;
+    skos:altLabel "temperature_celsius"@en ;
+    skos:notation "temperature_celsius" .
+
+cdf:electrolyte_ph rdf:type owl:Class ;
+    skos:prefLabel "pH / 1"@en ;
+    skos:altLabel "electrolyte_ph"@en ;
+    skos:notation "electrolyte_ph" .
+
+cdf:inlet_flow_rate_ml_min rdf:type owl:Class ;
+    skos:prefLabel "Inlet Flow Rate / mL/min"@en ;
+    skos:altLabel "inlet_flow_rate_ml_min"@en ;
+    skos:notation "inlet_flow_rate_ml_min" .
+
+cdf:outlet_flow_rate_ml_min rdf:type owl:Class ;
+    skos:prefLabel "Outlet Flow Rate / smL/min"@en ;
+    skos:altLabel "outlet_flow_rate_ml_min"@en ;
+    skos:notation "outlet_flow_rate_ml_min" .
+
+cdf:faradaic_efficiency_h2 rdf:type owl:Class ;
+    skos:prefLabel "Faradaic Efficiency H2 / 1"@en ;
+    skos:altLabel "faradaic_efficiency_h2"@en ;
+    skos:notation "faradaic_efficiency_h2" .
+
+cdf:outlet_mole_fraction_h2_percent rdf:type owl:Class ;
+    skos:prefLabel "Outlet Mole Fraction H2 / %"@en ;
+    skos:altLabel "outlet_mole_fraction_h2_percent"@en ;
+    skos:notation "outlet_mole_fraction_h2_percent" .
+
+cdf:outlet_molar_flow_h2_mol_s rdf:type owl:Class ;
+    skos:prefLabel "Outlet Molar Flow H2 / mol/s"@en ;
+    skos:altLabel "outlet_molar_flow_h2_mol_s"@en ;
+    skos:notation "outlet_molar_flow_h2_mol_s" .
+
+cdf:faradaic_efficiency_co2 rdf:type owl:Class ;
+    skos:prefLabel "Faradaic Efficiency CO2 / 1"@en ;
+    skos:altLabel "faradaic_efficiency_co2"@en ;
+    skos:notation "faradaic_efficiency_co2" .
+
+cdf:outlet_mole_fraction_co2_percent rdf:type owl:Class ;
+    skos:prefLabel "Outlet Mole Fraction CO2 / %"@en ;
+    skos:altLabel "outlet_mole_fraction_co2_percent"@en ;
+    skos:notation "outlet_mole_fraction_co2_percent" .
+
+cdf:outlet_molar_flow_co2_mol_s rdf:type owl:Class ;
+    skos:prefLabel "Outlet Molar Flow CO2 / mol/s"@en ;
+    skos:altLabel "outlet_molar_flow_co2_mol_s"@en ;
+    skos:notation "outlet_molar_flow_co2_mol_s" .

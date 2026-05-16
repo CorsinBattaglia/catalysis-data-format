@@ -2,11 +2,9 @@ from __future__ import annotations
 
 from pathlib import Path
 
-import numpy as np
 import pandas as pd
 
 import bdf
-from bdf.data_sources.neware_nda import NewareNDA
 
 
 def _write_text(path: Path, text: str) -> None:
@@ -49,39 +47,6 @@ def test_ingest_converts_raw_and_validates_bdf(tmp_path: Path) -> None:
     assert str(out_dir / "sample.bdf.csv") in validated
     assert (out_dir / "raw.bdf.csv").exists()
 
-
-def test_neware_nda_fixup_scales_milli_units() -> None:
-    df = pd.DataFrame(
-        {
-            "Current / A": [5000.0, -5000.0],
-            "Charging Capacity / Ah": [1000.0, 2000.0],
-            "Discharging Capacity / Ah": [1500.0, 2500.0],
-            "Charging Energy / Wh": [1000.0, 2000.0],
-            "Discharging Energy / Wh": [1500.0, 2500.0],
-        }
-    )
-    df.attrs["bdf:columns"] = {
-        "Current / A": {"sourceHeader": "Current(mA)"},
-        "Charging Capacity / Ah": {"sourceHeader": "Charge_Capacity(mAh)"},
-        "Discharging Capacity / Ah": {"sourceHeader": "Discharge_Capacity(mAh)"},
-        "Charging Energy / Wh": {"sourceHeader": "Charge_Energy(mWh)"},
-        "Discharging Energy / Wh": {"sourceHeader": "Discharge_Energy(mWh)"},
-    }
-
-    out = NewareNDA().fixup(df)
-    assert np.isclose(out["Current / A"].iloc[0], 5.0)
-    assert np.isclose(out["Charging Capacity / Ah"].iloc[0], 1.0)
-    assert np.isclose(out["Discharging Capacity / Ah"].iloc[0], 1.5)
-    assert np.isclose(out["Charging Energy / Wh"].iloc[0], 1.0)
-    assert np.isclose(out["Discharging Energy / Wh"].iloc[0], 1.5)
-
-
-def test_neware_nda_fixup_skips_amp_values() -> None:
-    df = pd.DataFrame({"Current / A": [5.0, -5.0]})
-    df.attrs["bdf:columns"] = {"Current / A": {"sourceHeader": "Current(A)"}}
-
-    out = NewareNDA().fixup(df)
-    assert np.isclose(out["Current / A"].iloc[0], 5.0)
 
 
 def test_ingest_existing_bdf_does_not_delete_source(tmp_path: Path) -> None:

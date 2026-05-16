@@ -1,0 +1,7 @@
+Test Time / s,Voltage / V,Current / A,Unix Time / s,Charge / As,Temperature / °C,pH / 1,Inlet Flow Rate / mL/min,Outlet Flow Rate / smL/min,Faradaic Efficiency H2 / 1,Outlet Mole Fraction H2 / %,Outlet Molar Flow H2 / mol/s,Faradaic Efficiency CO / 1,Outlet Mole Fraction CO / %,Outlet Molar Flow CO / mol/s,Faradaic Efficiency CO2 / 1,Outlet Mole Fraction CO2 / %,Outlet Molar Flow CO2 / mol/s
+0,0.0,0.0,1751328000,0.0,25.0,7.0,10.0,9.8,0.0,0.0,0.0,0.0,0.0,0.0,0.0,100.0,4.1e-06
+10,-1.8,-0.05,1751328010,-0.5,25.1,7.0,10.0,9.8,0.45,42.0,1.85e-07,0.12,1.1,4.8e-09,0.43,56.5,2.49e-06
+20,-1.82,-0.05,1751328020,-1.0,25.2,7.0,10.0,9.8,0.44,41.5,1.83e-07,0.13,1.2,5.3e-09,0.43,56.9,2.51e-06
+30,-1.83,-0.05,1751328030,-1.5,25.2,7.0,10.0,9.8,0.44,41.8,1.84e-07,0.13,1.2,5.3e-09,0.43,56.6,2.50e-06
+40,-1.83,-0.05,1751328040,-2.0,25.3,7.0,10.0,9.8,0.45,42.1,1.85e-07,0.12,1.1,4.8e-09,0.43,56.4,2.49e-06
+50,-1.84,-0.05,1751328050,-2.5,25.3,7.0,10.0,9.8,0.44,41.9,1.85e-07,0.13,1.2,5.3e-09,0.43,56.5,2.49e-06
