@@ -1,0 +1,985 @@
+{
+  "@context": [
+    "https://w3id.org/emmo/domain/battery/context",
+    {
+      "schema": "https://schema.org/",
+      "emmo": "https://w3id.org/emmo#",
+      "echem": "https://w3id.org/emmo/domain/electrochemistry#",
+      "battery": "https://w3id.org/emmo/domain/battery#",
+      "chemical": "https://w3id.org/emmo/domain/chemical-substance#",
+      "unit": "https://qudt.org/vocab/unit/",
+      "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+      "dc": "http://purl.org/dc/terms/",
+      "dcat": "http://www.w3.org/ns/dcat#",
+      "csvw": "http://www.w3.org/ns/csvw#"
+    }
+  ],
+  "@graph": [
+    {
+      "@type": "ElectrolysisTest",
+      "hasTestObject": {
+        "@type": "ElectrolyticCell",
+        "schema:version": "0.1.0",
+        "schema:productID": [
+          "empa__ecid000000"
+        ],
+        "schema:dateCreated": "2025-06-17",
+        "schema:creator": {
+          "@type": "schema:Person",
+          "@id": "https://orcid.org/0000-0002-6563-0578",
+          "schema:name": "Francesco Bernasconi"
+        },
+        "schema:manufacturer": {
+          "@type": "schema:Organization",
+          "schema:name": "Empa",
+          "@id": "https://www.wikidata.org/wiki/Q683116"
+        },
+        "rdfs:comment": [
+          "CatINFO Converter version: 3.1.2",
+          "Software credit: This JSON-LD was created using CatINFO converter (https://catinfoconverter.streamlit.app/) version: 3.1.2 and the schema version: 0.1.0, this web application was developed at Empa, Swiss Federal Laboratories for Materials Science and Technology in the Laboratory Materials for Energy Conversion",
+          "Cell ID: empa__ecid000000",
+          "Cell name: 20250617_AvCarb1-CuNP-2minGC-I-01",
+          "Date of cell assembly: 2025-06-17",
+          "Project: ETH Board ORD PREMISE/NCCR Catalysis",
+          "Assembled manually or by robot: manually",
+          "Schema name: ElectrolysisCellSchema",
+          "Schema version: 0.1.0"
+        ],
+        "hasNegativeElectrode": {
+          "@type": [
+            "Electrode",
+            "GasDiffusionElectrode"
+          ],
+          "hasSubstrate": {
+            "@type": [
+              "Substrate",
+              "CarbonPaper",
+              "Carbon"
+            ],
+            "schema:manufacturer": {
+              "@type": "schema:Organization",
+              "schema:name": "AvCarb"
+            },
+            "schema:productID": "Avcarb C paper"
+          },
+          "hasCoating": {
+            "@type": "Coating",
+            "hasActiveMaterial": {
+              "@type": [
+                "Electrocatalyst",
+                "Copper"
+              ],
+              "hasMeasuredProperty": [
+                {
+                  "@type": "MassLoading",
+                  "hasNumericalPart": {
+                    "@type": "emmo:RealData",
+                    "hasNumberValue": 1
+                  },
+                  "hasMeasurementUnit": "unit:MilliGM-PER-CentiM2"
+                },
+                {
+                  "@type": "MassFraction",
+                  "hasNumericalPart": {
+                    "@type": "emmo:RealData",
+                    "hasNumberValue": 100
+                  },
+                  "hasMeasurementUnit": "unit:PERCENT"
+                }
+              ]
+            }
+          },
+          "schema:manufacturer": {
+            "@type": "schema:Organization",
+            "schema:name": "Empa",
+            "@id": "https://www.wikidata.org/wiki/Q683116"
+          },
+          "schema:productID": "Avcarb C paper",
+          "hasMeasuredProperty": {
+            "@type": "Area",
+            "hasNumericalPart": {
+              "@type": "emmo:RealData",
+              "hasNumberValue": 1
+            },
+            "hasMeasurementUnit": "unit:CentiM2"
+          }
+        },
+        "hasPositiveElectrode": {
+          "@type": [
+            "Electrode",
+            "ImmersionElectrode"
+          ],
+          "hasSubstrate": {
+            "@type": [
+              "Substrate",
+              "Mesh",
+              "Titanium"
+            ],
+            "schema:productID": "Ti mesh"
+          },
+          "hasCoating": {
+            "@type": "Coating",
+            "hasActiveMaterial": {
+              "@type": [
+                "Electrocatalyst",
+                "IridiumOxideCompound"
+              ],
+              "hasMeasuredProperty": [
+                {
+                  "@type": "MassLoading",
+                  "hasNumericalPart": {
+                    "@type": "emmo:RealData",
+                    "hasNumberValue": 2
+                  },
+                  "hasMeasurementUnit": "unit:MilliGM-PER-CentiM2"
+                },
+                {
+                  "@type": "MassFraction",
+                  "hasNumericalPart": {
+                    "@type": "emmo:RealData",
+                    "hasNumberValue": 100
+                  },
+                  "hasMeasurementUnit": "unit:PERCENT"
+                }
+              ]
+            },
+            "hasMeasuredProperty": {
+              "@type": "Thickness",
+              "hasNumericalPart": {
+                "@type": "emmo:RealData",
+                "hasNumberValue": 0.25
+              },
+              "hasMeasurementUnit": "unit:MicroM"
+            }
+          },
+          "schema:manufacturer": {
+            "@type": "schema:Organization",
+            "schema:name": "Empa",
+            "@id": "https://www.wikidata.org/wiki/Q683116"
+          },
+          "schema:productID": "Commercial IrOx on Ti",
+          "hasMeasuredProperty": {
+            "@type": "Area",
+            "hasNumericalPart": {
+              "@type": "emmo:RealData",
+              "hasNumberValue": 10
+            },
+            "hasMeasurementUnit": "unit:CentiM2"
+          }
+        },
+        "hasComponent": [
+          {
+            "@type": "NegativeElectrodeGasCompartment",
+            "hasActiveMaterial": {
+              "@type": "GasMixture",
+              "hasConstituent": {
+                "Gas": {
+                  "@type": "CarbonDioxide"
+                },
+                "hasMeasuredProperty": {
+                  "@type": "VolumeFraction",
+                  "hasNumericalPart": {
+                    "@type": "emmo:RealData",
+                    "hasNumberValue": 100
+                  },
+                  "hasMeasurementUnit": "unit:PERCENT"
+                }
+              },
+              "hasMeasuredProperty": [
+                {
+                  "@type": "VolumeFlowRate",
+                  "hasNumericalPart": {
+                    "@type": "emmo:RealData",
+                    "hasNumberValue": 20
+                  },
+                  "hasMeasurementUnit": "unit:MilliL-PER-MIN"
+                },
+                {
+                  "@type": "Pressure",
+                  "hasNumericalPart": {
+                    "@type": "emmo:RealData",
+                    "hasNumberValue": 1
+                  },
+                  "hasMeasurementUnit": "unit:BAR"
+                }
+              ]
+            }
+          },
+          {
+            "@type": "CatholyteCompartment",
+            "hasReferenceElectrode": {
+              "@type": [
+                "ReferenceElectrode",
+                "SilverChlorideElectrode"
+              ]
+            }
+          },
+          {
+            "@type": "PositiveElectrodeGasCompartment",
+            "hasActiveMaterial": {
+              "@type": "GasMixture",
+              "hasConstituent": {
+                "Gas": {
+                  "@type": "Air"
+                },
+                "hasMeasuredProperty": {
+                  "@type": "VolumeFraction",
+                  "hasNumericalPart": {
+                    "@type": "emmo:RealData",
+                    "hasNumberValue": 100
+                  },
+                  "hasMeasurementUnit": "unit:PERCENT"
+                }
+              },
+              "hasMeasuredProperty": [
+                {
+                  "@type": "VolumeFlowRate",
+                  "hasNumericalPart": {
+                    "@type": "emmo:RealData",
+                    "hasNumberValue": 0
+                  },
+                  "hasMeasurementUnit": "unit:MilliL-PER-MIN"
+                },
+                {
+                  "@type": "Pressure",
+                  "hasNumericalPart": {
+                    "@type": "emmo:RealData",
+                    "hasNumberValue": 1
+                  },
+                  "hasMeasurementUnit": "unit:BAR"
+                }
+              ]
+            }
+          },
+          {
+            "@type": "CatholyteTank",
+            "hasMeasuredProperty": {
+              "@type": "Volume",
+              "hasNumericalPart": {
+                "@type": "emmo:RealData",
+                "hasNumberValue": 100
+              },
+              "hasMeasurementUnit": "unit:MilliL"
+            }
+          },
+          {
+            "@type": "AnolyteTank",
+            "hasMeasuredProperty": {
+              "@type": "Volume",
+              "hasNumericalPart": {
+                "@type": "emmo:RealData",
+                "hasNumberValue": 100
+              },
+              "hasMeasurementUnit": "unit:MilliL"
+            }
+          }
+        ],
+        "hasCatholyte": {
+          "hasSolvent": {
+            "@type": "Solvent",
+            "hasConstituent": {
+              "@type": "Water",
+              "hasMeasuredProperty": {
+                "@type": "VolumeFraction",
+                "hasNumericalPart": {
+                  "@type": "emmo:RealData",
+                  "hasNumberValue": 100
+                },
+                "hasMeasurementUnit": "unit:PERCENT"
+              }
+            }
+          },
+          "hasSolute": {
+            "@type": "Solute",
+            "hasConstituent": {
+              "@type": "PotassiumChloride",
+              "hasMeasuredProperty": {
+                "@type": "AmountConcentration",
+                "hasNumericalPart": {
+                  "@type": "emmo:RealData",
+                  "hasNumberValue": 2
+                },
+                "hasMeasurementUnit": "unit:MOL-PER-L"
+              }
+            }
+          },
+          "hasMeasuredProperty": [
+            {
+              "@type": "Volume",
+              "hasNumericalPart": {
+                "@type": "emmo:RealData",
+                "hasNumberValue": 100
+              },
+              "hasMeasurementUnit": "unit:MilliL"
+            },
+            {
+              "@type": "VolumeFlowRate",
+              "hasNumericalPart": {
+                "@type": "emmo:RealData",
+                "hasNumberValue": 5
+              },
+              "hasMeasurementUnit": "unit:MilliL-PER-MIN"
+            },
+            {
+              "@type": "Pressure",
+              "hasNumericalPart": {
+                "@type": "emmo:RealData",
+                "hasNumberValue": 1
+              },
+              "hasMeasurementUnit": "unit:BAR"
+            },
+            {
+              "@type": "pH",
+              "hasNumericalPart": {
+                "@type": "emmo:RealData",
+                "hasNumberValue": 3.8
+              },
+              "hasMeasurementUnit": "unit:UNITLESS"
+            },
+            {
+              "@type": "CelsiusTemperature",
+              "hasNumericalPart": {
+                "@type": "emmo:RealData",
+                "hasNumberValue": 25
+              },
+              "hasMeasurementUnit": "unit:DEG_C"
+            }
+          ],
+          "schema:manufacturer": {
+            "@type": "schema:Organization",
+            "schema:name": "Empa",
+            "@id": "https://www.wikidata.org/wiki/Q683116"
+          },
+          "schema:productID": "KCl_2.0M_catholyte"
+        },
+        "hasAnolyte": {
+          "hasSolvent": {
+            "@type": "Solvent",
+            "hasConstituent": {
+              "@type": "Water",
+              "hasMeasuredProperty": {
+                "@type": "VolumeFraction",
+                "hasNumericalPart": {
+                  "@type": "emmo:RealData",
+                  "hasNumberValue": 100
+                },
+                "hasMeasurementUnit": "unit:PERCENT"
+              }
+            }
+          },
+          "hasSolute": {
+            "@type": "Solute",
+            "hasConstituent": {
+              "@type": "SulfuricAcid",
+              "hasMeasuredProperty": {
+                "@type": "AmountConcentration",
+                "hasNumericalPart": {
+                  "@type": "emmo:RealData",
+                  "hasNumberValue": 1
+                },
+                "hasMeasurementUnit": "unit:MOL-PER-L"
+              }
+            }
+          },
+          "hasMeasuredProperty": [
+            {
+              "@type": "Volume",
+              "hasNumericalPart": {
+                "@type": "emmo:RealData",
+                "hasNumberValue": 100
+              },
+              "hasMeasurementUnit": "unit:MilliL"
+            },
+            {
+              "@type": "VolumeFlowRate",
+              "hasNumericalPart": {
+                "@type": "emmo:RealData",
+                "hasNumberValue": 5
+              },
+              "hasMeasurementUnit": "unit:MilliL-PER-MIN"
+            },
+            {
+              "@type": "Pressure",
+              "hasNumericalPart": {
+                "@type": "emmo:RealData",
+                "hasNumberValue": 1
+              },
+              "hasMeasurementUnit": "unit:BAR"
+            },
+            {
+              "@type": "CelsiusTemperature",
+              "hasNumericalPart": {
+                "@type": "emmo:RealData",
+                "hasNumberValue": 25
+              },
+              "hasMeasurementUnit": "unit:DEG_C"
+            },
+            {
+              "@type": "pH",
+              "hasNumericalPart": {
+                "@type": "emmo:RealData",
+                "hasNumberValue": null
+              },
+              "hasMeasurementUnit": "unit:UNITLESS"
+            }
+          ],
+          "schema:manufacturer": {
+            "@type": "schema:Organization",
+            "schema:name": "Empa",
+            "@id": "https://www.wikidata.org/wiki/Q683116"
+          },
+          "schema:productID": "H2SO4_1.0M_anolyte"
+        },
+        "hasSeparator": {
+          "@type": [
+            "Separator",
+            "IonExchangeMembrane"
+          ],
+          "hasElectrolyte": {
+            "@type": [
+              "CationExchangeMembrane",
+              "PerfluorosulfonicAcid"
+            ],
+            "schema:manufacturer": {
+              "@type": "schema:Organization",
+              "schema:name": "Solvay",
+              "@id": "https://www.wikidata.org/wiki/Q487209"
+            },
+            "schema:productID": "Aquivion"
+          },
+          "hasMeasuredProperty": {
+            "@type": "Area",
+            "hasNumericalPart": {
+              "@type": "emmo:RealData",
+              "hasNumberValue": 1
+            },
+            "hasMeasurementUnit": "unit:CentiM2"
+          }
+        },
+        "hasCase": {
+          "@type": "FlowCell"
+        },
+        "schema:name": [
+          "20250617_AvCarb1-CuNP-2minGC-I-01"
+        ]
+      },
+      "hasTestEquipment": {
+        "@type": "Potentiostat",
+        "schema:manufacturer": {
+          "@type": "schema:Organization",
+          "@id": "https://battery.knowledge-graph.eu/wiki/Item:OSW4956eab590f649c18139b1f292cc836f",
+          "schema:name": "BioLogic"
+        },
+        "rdfs:label": "BioLogic"
+      },
+      "hasMeasurementParameter": {
+        "@type": "VoltageHold",
+        "hasInput": [
+          {
+            "@type": "Voltage",
+            "hasNumericalPart": {
+              "@type": "RealData",
+              "hasNumberValue": -1.2
+            },
+            "hasMeasurementUnit": "emmo:Volt"
+          },
+          {
+            "@type": "Duration",
+            "hasNumericalPart": {
+              "@type": "RealData",
+              "hasNumberValue": 10.0
+            },
+            "hasMeasurementUnit": "emmo:Second"
+          }
+        ],
+        "hasNext": {
+          "@type": "ElectrochemicalImpedanceSpectroscopy",
+          "hasInput": [
+            {
+              "@type": "AmplitudeOfAlternatingVoltage",
+              "hasNumericalPart": {
+                "@type": "RealData",
+                "hasNumberValue": 0.025
+              },
+              "hasMeasurementUnit": "emmo:Volt"
+            },
+            {
+              "@type": "LowerFrequencyLimit",
+              "hasNumericalPart": {
+                "@type": "RealData",
+                "hasNumberValue": 1.0
+              },
+              "hasMeasurementUnit": "emmo:Hertz"
+            },
+            {
+              "@type": "UpperFrequencyLimit",
+              "hasNumericalPart": {
+                "@type": "RealData",
+                "hasNumberValue": 100000.0
+              },
+              "hasMeasurementUnit": "emmo:Hertz"
+            }
+          ],
+          "hasNext": {
+            "@type": "ConstantCurrentOperation",
+            "hasInput": [
+              {
+                "@type": "ElectricCurrent",
+                "hasNumericalPart": {
+                  "@type": "RealData",
+                  "hasNumberValue": 200.0
+                },
+                "hasMeasurementUnit": "emmo:MilliAmpere"
+              },
+              {
+                "@type": "Duration",
+                "hasNumericalPart": {
+                  "@type": "RealData",
+                  "hasNumberValue": 900.0
+                },
+                "hasMeasurementUnit": "emmo:Second"
+              }
+            ],
+            "hasNext": {
+              "@type": "ElectrochemicalImpedanceSpectroscopy",
+              "hasInput": [
+                {
+                  "@type": "AmplitudeOfAlternatingVoltage",
+                  "hasNumericalPart": {
+                    "@type": "RealData",
+                    "hasNumberValue": 0.025
+                  },
+                  "hasMeasurementUnit": "emmo:Volt"
+                },
+                {
+                  "@type": "LowerFrequencyLimit",
+                  "hasNumericalPart": {
+                    "@type": "RealData",
+                    "hasNumberValue": 1.0
+                  },
+                  "hasMeasurementUnit": "emmo:Hertz"
+                },
+                {
+                  "@type": "UpperFrequencyLimit",
+                  "hasNumericalPart": {
+                    "@type": "RealData",
+                    "hasNumberValue": 100000.0
+                  },
+                  "hasMeasurementUnit": "emmo:Hertz"
+                }
+              ],
+              "hasNext": {
+                "@type": "VoltageHold",
+                "hasInput": [
+                  {
+                    "@type": "Voltage",
+                    "hasNumericalPart": {
+                      "@type": "RealData",
+                      "hasNumberValue": -0.2
+                    },
+                    "hasMeasurementUnit": "emmo:Volt"
+                  },
+                  {
+                    "@type": "Duration",
+                    "hasNumericalPart": {
+                      "@type": "RealData",
+                      "hasNumberValue": 5.0
+                    },
+                    "hasMeasurementUnit": "emmo:Second"
+                  }
+                ],
+                "hasNext": {
+                  "@type": "ConstantCurrentOperation",
+                  "hasInput": [
+                    {
+                      "@type": "ElectricCurrent",
+                      "hasNumericalPart": {
+                        "@type": "RealData",
+                        "hasNumberValue": 300.0
+                      },
+                      "hasMeasurementUnit": "emmo:MilliAmpere"
+                    },
+                    {
+                      "@type": "Duration",
+                      "hasNumericalPart": {
+                        "@type": "RealData",
+                        "hasNumberValue": 900.0
+                      },
+                      "hasMeasurementUnit": "emmo:Second"
+                    }
+                  ],
+                  "hasNext": {
+                    "@type": "ElectrochemicalImpedanceSpectroscopy",
+                    "hasInput": [
+                      {
+                        "@type": "AmplitudeOfAlternatingVoltage",
+                        "hasNumericalPart": {
+                          "@type": "RealData",
+                          "hasNumberValue": 0.025
+                        },
+                        "hasMeasurementUnit": "emmo:Volt"
+                      },
+                      {
+                        "@type": "LowerFrequencyLimit",
+                        "hasNumericalPart": {
+                          "@type": "RealData",
+                          "hasNumberValue": 1.0
+                        },
+                        "hasMeasurementUnit": "emmo:Hertz"
+                      },
+                      {
+                        "@type": "UpperFrequencyLimit",
+                        "hasNumericalPart": {
+                          "@type": "RealData",
+                          "hasNumberValue": 100000.0
+                        },
+                        "hasMeasurementUnit": "emmo:Hertz"
+                      }
+                    ],
+                    "hasNext": {
+                      "@type": "VoltageHold",
+                      "hasInput": [
+                        {
+                          "@type": "Voltage",
+                          "hasNumericalPart": {
+                            "@type": "RealData",
+                            "hasNumberValue": -0.2
+                          },
+                          "hasMeasurementUnit": "emmo:Volt"
+                        },
+                        {
+                          "@type": "Duration",
+                          "hasNumericalPart": {
+                            "@type": "RealData",
+                            "hasNumberValue": 5.0
+                          },
+                          "hasMeasurementUnit": "emmo:Second"
+                        }
+                      ],
+                      "hasNext": {
+                        "@type": "ConstantCurrentOperation",
+                        "hasInput": [
+                          {
+                            "@type": "ElectricCurrent",
+                            "hasNumericalPart": {
+                              "@type": "RealData",
+                              "hasNumberValue": 400.0
+                            },
+                            "hasMeasurementUnit": "emmo:MilliAmpere"
+                          },
+                          {
+                            "@type": "Duration",
+                            "hasNumericalPart": {
+                              "@type": "RealData",
+                              "hasNumberValue": 900.0
+                            },
+                            "hasMeasurementUnit": "emmo:Second"
+                          }
+                        ],
+                        "hasNext": {
+                          "@type": "ElectrochemicalImpedanceSpectroscopy",
+                          "hasInput": [
+                            {
+                              "@type": "AmplitudeOfAlternatingVoltage",
+                              "hasNumericalPart": {
+                                "@type": "RealData",
+                                "hasNumberValue": 0.025
+                              },
+                              "hasMeasurementUnit": "emmo:Volt"
+                            },
+                            {
+                              "@type": "LowerFrequencyLimit",
+                              "hasNumericalPart": {
+                                "@type": "RealData",
+                                "hasNumberValue": 1.0
+                              },
+                              "hasMeasurementUnit": "emmo:Hertz"
+                            },
+                            {
+                              "@type": "UpperFrequencyLimit",
+                              "hasNumericalPart": {
+                                "@type": "RealData",
+                                "hasNumberValue": 100000.0
+                              },
+                              "hasMeasurementUnit": "emmo:Hertz"
+                            }
+                          ],
+                          "hasNext": {
+                            "@type": "VoltageHold",
+                            "hasInput": [
+                              {
+                                "@type": "Voltage",
+                                "hasNumericalPart": {
+                                  "@type": "RealData",
+                                  "hasNumberValue": -0.2
+                                },
+                                "hasMeasurementUnit": "emmo:Volt"
+                              },
+                              {
+                                "@type": "Duration",
+                                "hasNumericalPart": {
+                                  "@type": "RealData",
+                                  "hasNumberValue": 5.0
+                                },
+                                "hasMeasurementUnit": "emmo:Second"
+                              }
+                            ],
+                            "hasNext": {
+                              "@type": "ConstantCurrentOperation",
+                              "hasInput": [
+                                {
+                                  "@type": "ElectricCurrent",
+                                  "hasNumericalPart": {
+                                    "@type": "RealData",
+                                    "hasNumberValue": 500.0
+                                  },
+                                  "hasMeasurementUnit": "emmo:MilliAmpere"
+                                },
+                                {
+                                  "@type": "Duration",
+                                  "hasNumericalPart": {
+                                    "@type": "RealData",
+                                    "hasNumberValue": 900.0
+                                  },
+                                  "hasMeasurementUnit": "emmo:Second"
+                                }
+                              ],
+                              "hasNext": {
+                                "@type": "ElectrochemicalImpedanceSpectroscopy",
+                                "hasInput": [
+                                  {
+                                    "@type": "AmplitudeOfAlternatingVoltage",
+                                    "hasNumericalPart": {
+                                      "@type": "RealData",
+                                      "hasNumberValue": 0.025
+                                    },
+                                    "hasMeasurementUnit": "emmo:Volt"
+                                  },
+                                  {
+                                    "@type": "LowerFrequencyLimit",
+                                    "hasNumericalPart": {
+                                      "@type": "RealData",
+                                      "hasNumberValue": 1.0
+                                    },
+                                    "hasMeasurementUnit": "emmo:Hertz"
+                                  },
+                                  {
+                                    "@type": "UpperFrequencyLimit",
+                                    "hasNumericalPart": {
+                                      "@type": "RealData",
+                                      "hasNumberValue": 100000.0
+                                    },
+                                    "hasMeasurementUnit": "emmo:Hertz"
+                                  }
+                                ],
+                                "hasNext": {
+                                  "@type": "VoltageHold",
+                                  "hasInput": [
+                                    {
+                                      "@type": "Voltage",
+                                      "hasNumericalPart": {
+                                        "@type": "RealData",
+                                        "hasNumberValue": -0.2
+                                      },
+                                      "hasMeasurementUnit": "emmo:Volt"
+                                    },
+                                    {
+                                      "@type": "Duration",
+                                      "hasNumericalPart": {
+                                        "@type": "RealData",
+                                        "hasNumberValue": 5.0
+                                      },
+                                      "hasMeasurementUnit": "emmo:Second"
+                                    }
+                                  ],
+                                  "hasNext": {
+                                    "@type": "ConstantCurrentOperation",
+                                    "hasInput": [
+                                      {
+                                        "@type": "ElectricCurrent",
+                                        "hasNumericalPart": {
+                                          "@type": "RealData",
+                                          "hasNumberValue": 600.0
+                                        },
+                                        "hasMeasurementUnit": "emmo:MilliAmpere"
+                                      },
+                                      {
+                                        "@type": "Duration",
+                                        "hasNumericalPart": {
+                                          "@type": "RealData",
+                                          "hasNumberValue": 900.0
+                                        },
+                                        "hasMeasurementUnit": "emmo:Second"
+                                      }
+                                    ],
+                                    "hasNext": {
+                                      "@type": "ElectrochemicalImpedanceSpectroscopy",
+                                      "hasInput": [
+                                        {
+                                          "@type": "AmplitudeOfAlternatingVoltage",
+                                          "hasNumericalPart": {
+                                            "@type": "RealData",
+                                            "hasNumberValue": 0.025
+                                          },
+                                          "hasMeasurementUnit": "emmo:Volt"
+                                        },
+                                        {
+                                          "@type": "LowerFrequencyLimit",
+                                          "hasNumericalPart": {
+                                            "@type": "RealData",
+                                            "hasNumberValue": 1.0
+                                          },
+                                          "hasMeasurementUnit": "emmo:Hertz"
+                                        },
+                                        {
+                                          "@type": "UpperFrequencyLimit",
+                                          "hasNumericalPart": {
+                                            "@type": "RealData",
+                                            "hasNumberValue": 100000.0
+                                          },
+                                          "hasMeasurementUnit": "emmo:Hertz"
+                                        }
+                                      ],
+                                      "hasNext": {
+                                        "@type": "VoltageHold",
+                                        "hasInput": [
+                                          {
+                                            "@type": "Voltage",
+                                            "hasNumericalPart": {
+                                              "@type": "RealData",
+                                              "hasNumberValue": -0.2
+                                            },
+                                            "hasMeasurementUnit": "emmo:Volt"
+                                          },
+                                          {
+                                            "@type": "Duration",
+                                            "hasNumericalPart": {
+                                              "@type": "RealData",
+                                              "hasNumberValue": 5.0
+                                            },
+                                            "hasMeasurementUnit": "emmo:Second"
+                                          }
+                                        ],
+                                        "hasNext": {
+                                          "@type": "ConstantCurrentOperation",
+                                          "hasInput": [
+                                            {
+                                              "@type": "ElectricCurrent",
+                                              "hasNumericalPart": {
+                                                "@type": "RealData",
+                                                "hasNumberValue": 700.0
+                                              },
+                                              "hasMeasurementUnit": "emmo:MilliAmpere"
+                                            },
+                                            {
+                                              "@type": "Duration",
+                                              "hasNumericalPart": {
+                                                "@type": "RealData",
+                                                "hasNumberValue": 900.0
+                                              },
+                                              "hasMeasurementUnit": "emmo:Second"
+                                            }
+                                          ],
+                                          "hasNext": {
+                                            "@type": "ElectrochemicalImpedanceSpectroscopy",
+                                            "hasInput": [
+                                              {
+                                                "@type": "AmplitudeOfAlternatingVoltage",
+                                                "hasNumericalPart": {
+                                                  "@type": "RealData",
+                                                  "hasNumberValue": 0.025
+                                                },
+                                                "hasMeasurementUnit": "emmo:Volt"
+                                              },
+                                              {
+                                                "@type": "LowerFrequencyLimit",
+                                                "hasNumericalPart": {
+                                                  "@type": "RealData",
+                                                  "hasNumberValue": 1.0
+                                                },
+                                                "hasMeasurementUnit": "emmo:Hertz"
+                                              },
+                                              {
+                                                "@type": "UpperFrequencyLimit",
+                                                "hasNumericalPart": {
+                                                  "@type": "RealData",
+                                                  "hasNumberValue": 100000.0
+                                                },
+                                                "hasMeasurementUnit": "emmo:Hertz"
+                                              }
+                                            ]
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "rdfs:label": "ElectrolysisTestProcedure",
+        "rdfs:comment": "Electrochemical protocol generated from BioLogic .mps file via aurora-unicycler"
+      },
+      "hasOutput": {
+        "@type": [
+          "ElectrolysisTestResult",
+          "dcat:Dataset"
+        ],
+        "dc:title": "Electrolysis results for 20250617_AvCarb1-CuNP-2minGC-I-01",
+        "dc:description": "Electrochemical timeseries and product faradaic efficiencies for experiment 20250617_AvCarb1-CuNP-2minGC-I-01. Column 'Voltage / V' contains the cathode potential measured against an Ag/AgCl reference electrode (not corrected to RHE or SHE).",
+        "dc:creator": [
+          {
+            "@type": "schema:Person",
+            "@id": "https://orcid.org/0000-0002-6563-0578",
+            "schema:name": "Francesco Bernasconi",
+            "schema:affiliation": {
+              "@type": "schema:ResearchOrganization",
+              "@id": "https://www.wikidata.org/wiki/Q683116",
+              "schema:name": "Empa"
+            }
+          }
+        ],
+        "dc:publisher": {
+          "@type": "schema:ResearchOrganization",
+          "@id": "https://www.wikidata.org/wiki/Q683116",
+          "schema:name": "Empa"
+        },
+        "dc:license": "https://creativecommons.org/licenses/by/4.0/",
+        "dcat:keyword": [
+          "CO2 electroreduction",
+          "gas diffusion electrode",
+          "copper",
+          "electrolysis"
+        ],
+        "dcat:distribution": [
+          {
+            "@type": "dcat:Distribution",
+            "dcat:downloadURL": "empa__ecid000000.cdf.parquet",
+            "dcat:mediaType": "application/vnd.apache.parquet",
+            "csvw:tableSchema": "https://w3id.org/catalysis-data-format/schema"
+          },
+          {
+            "@type": "dcat:Distribution",
+            "dcat:downloadURL": "empa__ecid000000.cdf.csv",
+            "dcat:mediaType": "text/csv",
+            "csvw:dialect": {
+              "@type": "csvw:Dialect",
+              "csvw:delimiter": ",",
+              "csvw:skipRows": 0
+            },
+            "csvw:tableSchema": "https://w3id.org/catalysis-data-format/schema"
+          }
+        ]
+      }
+    }
+  ]
+}
