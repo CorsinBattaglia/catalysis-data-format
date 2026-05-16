@@ -3,13 +3,13 @@ requires = ["hatchling>=1.25"]
 build-backend = "hatchling.build"
 
 [project]
-name = "batterydf"
+name = "catalysisdf"
 version = "0.1.0"
-description = "Battery Data Format: load, convert, visualize, and publish"
+description = "Catalysis Data Format: load, convert, visualize, and publish electrolyser time-series data"
 requires-python = ">=3.9"
 license = { text = "Apache-2.0" }
-authors = [{ name = "Battery Data Alliance" }]
-keywords = ["battery", "data", "time-series", "bdf", "csv", "parquet"]
+authors = [{ name = "Corsin Battaglia" }]
+keywords = ["catalysis", "electrolyser", "data", "time-series", "cdf", "csv", "parquet"]
 classifiers = [
   "License :: OSI Approved :: Apache Software License",
   "Programming Language :: Python :: 3",
@@ -40,17 +40,17 @@ dependencies = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/battery-data-alliance/battery-data-format"
-Issues   = "https://github.com/battery-data-alliance/battery-data-format/issues"
+Homepage = "https://github.com/CorsinBattaglia/catalysis-data-format"
+Issues   = "https://github.com/CorsinBattaglia/catalysis-data-format/issues"
 
 [project.scripts]
-bdf = "bdf.cli:app"
+cdf = "cdf.cli:app"
 
-[project.entry-points."bdf.data_sources"]
-biologic-mpt = "bdf.data_sources.biologic_mpt:BioLogicMPT"
-neware-csv   = "bdf.data_sources.neware_csv:NewareCSV"
-neware-nda   = "bdf.data_sources.neware_nda:NewareNDA"
-neware-nda-fast = "bdf.data_sources.neware_nda:NewareNDAFast"
+[project.entry-points."cdf.data_sources"]
+biologic-mpt = "cdf.data_sources.biologic_mpt:BioLogicMPT"
+neware-csv   = "cdf.data_sources.neware_csv:NewareCSV"
+neware-nda   = "cdf.data_sources.neware_nda:NewareNDA"
+neware-nda-fast = "cdf.data_sources.neware_nda:NewareNDAFast"
 
 [project.optional-dependencies]
 fastnda = ["fastnda"]
@@ -79,16 +79,16 @@ content-type = "text/markdown"
 
 [tool.hatch.build.targets.wheel]
 packages = [
-  "src/bdf",
+  "src/cdf",
 ]
 include = [
-  "src/bdf/schemas/*.json",
+  "src/cdf/schemas/*.json",
 ]
 
 [tool.hatch.build.targets.sdist]
 include = [
-  "src/bdf/**",
-  "src/bdf/schemas/*.json",
+  "src/cdf/**",
+  "src/cdf/schemas/*.json",
   "README.md",
   "pyproject.toml",
 ]
