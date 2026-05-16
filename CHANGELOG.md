@@ -9,7 +9,7 @@ This release marks the initial adaptation of the Battery Data Format into the **
 
 ### Forked from
 - Upstream: [battery-data-alliance/battery-data-format](https://github.com/battery-data-alliance/battery-data-format) (Apache-2.0)
-- Fork: [CorsinBattaglia/catalysis-data-format](https://github.com/CorsinBattaglia/catalysis-data-format)
+- Fork: [catalysis-data-alliance/catalysis-data-format](https://github.com/catalysis-data-alliance/catalysis-data-format)
 
 ### Added
 - 8 new optional columns in the CDF column registry (`src/cdf/normalize/spec.py`):
